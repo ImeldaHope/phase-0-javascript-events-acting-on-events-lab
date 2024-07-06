@@ -17,6 +17,10 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
+// Using style.right won't work because changing the style.right property doesn't change the style.left property, 
+//which means we'd have conflicting information about where the dodger should be on the screen.
+//JavaScript solves this problem by giving precedence to style.left. Thus, any changes to style.right will be entirely ignored.
+
 function moveDodgerRight() {
     const rightNumbers = dodger.style.left.replace("px", "");
     const left = parseInt(rightNumbers, 10);
